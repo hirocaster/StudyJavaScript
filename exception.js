@@ -1,3 +1,4 @@
+'use strict';
 try {
     console.log('1');
     // null.x;
