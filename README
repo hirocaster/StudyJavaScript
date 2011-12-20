@@ -1,0 +1,5 @@
+gem install jstdutil
+
+jstestdriver
+
+java -jar ./bin/JsTestDriver-1.2.1.jar --tests all
