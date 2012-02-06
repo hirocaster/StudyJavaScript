@@ -1,5 +1,13 @@
-gem install jstdutil
+==========
+JavaScriptを学ぶための個人的なリポジトリ
+==========
 
-jstestdriver
+TDDJavaScript
+========
+テスト駆動JavaScript
+http://t.co/LOsPlWmV
 
-java -jar ./bin/JsTestDriver-1.2.1.jar --tests all
+BowlingGame
+========
+Bowling Game Kata
+http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
