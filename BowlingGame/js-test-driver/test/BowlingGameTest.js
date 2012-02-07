@@ -37,13 +37,13 @@ TestCase("BowlingGame", {
     assertEquals(19, this.game.score());
   },
 
-  // "test one strike": function() {
-  //   this.game.roll(10); //strike
-  //   this.game.roll(5);
-  //   this.game.roll(3);
-  //   this.rollMany(16, 0);
-  //   assertEquals(26, this.game.score());
-  // },
+  "test one strike": function() {
+    this.game.roll(10); //strike
+    this.game.roll(5);
+    this.game.roll(3);
+    this.rollMany(16, 0);
+    assertEquals(26, this.game.score());
+  },
 
   "rollMany": function(n, pins) {
     for(i=0;i<n;i++){

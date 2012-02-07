@@ -12,6 +12,10 @@ var BowlingGame = function(){
     var nextRollStandPins = 0;
     nextRollStandPins = standPins - pins;
 
+    if(standPins == 10 && nextRollStandPins == 0){
+      scoreUp = scoreUp + 2;
+    }
+
     if(standPins < 10 && nextRollStandPins == 0){
       scoreUp++;
     }
