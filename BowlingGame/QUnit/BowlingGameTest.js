@@ -1,57 +1,54 @@
-var game = null;
-module("BowlingGame",{
-  setup:function() {
-    game = new Bowling();
-  },
-  teardown:function() {
-  }
-});
+(function(){
 
-function rollMany(n, pins) {
-  for( i=0; i < n; i++) {
-    game.roll(pins);
-  }
-};
+  var game = null;
+  module("BowlingGame",{
+    setup:function() {
+      game = new Bowling();
+    },
+    teardown:function() {
+    }
+  });
 
-test("new Bowling Class", function() {
-  var bowling = new Bowling();
-  equal( typeof(bowling) == "object" ? true : false, true );
-});
+  function rollMany(n, pins) {
+    for( i=0; i < n; i++) {
+      game.roll(pins);
+    }
+  };
 
-test("20roll all gutter", function() {
-  rollMany(20, 0);
-  equal( game.score(), 0 );
-});
+  test("new Bowling Class", function() {
+    var bowling = new Bowling();
+    equal( typeof(bowling) == "object" ? true : false, true );
+  });
 
+  test("20roll all gutter", function() {
+    rollMany(20, 0);
+    equal( game.score(), 0 );
+  });
 
-test("20roll all one", function() {
-  rollMany(20, 1);
-  equal( game.score(), 20 );
-});
+  test("20roll all one", function() {
+    rollMany(20, 1);
+    equal( game.score(), 20 );
+  });
 
-test("one spare",function() {
-  game.roll(5);
-  game.roll(5); // spare
-  game.roll(3);
-  rollMany(17, 0);
-  equal( game.score(), 16 );
-});
+  test("one spare",function() {
+    game.roll(5);
+    game.roll(5); // spare
+    game.roll(3);
+    rollMany(17, 0);
+    equal( game.score(), 16 );
+  });
 
-test("one strike",function() {
-  game.roll(10); //strike
-  game.roll(4);
-  game.roll(3);
-  rollMany(16, 0);
-  equal( game.score(), 24 );
-});
+  test("one strike",function() {
+    game.roll(10); //strike
+    game.roll(4);
+    game.roll(3);
+    rollMany(16, 0);
+    equal( game.score(), 24 );
+  });
 
-test("Perfect Game last one pin",function() {
-  rollMany(11, 10);
-  game.roll(9);
-  equal( game.score(), 299 );
-});
+  test("Perfect Game",function() {
+    rollMany(12, 10);
+    equal( game.score(), 300 );
+  });
 
-test("Perfect Game",function() {
-  rollMany(12, 10);
-  equal( game.score(), 300 );
-});
+})();
