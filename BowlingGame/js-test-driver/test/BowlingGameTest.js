@@ -45,6 +45,11 @@ TestCase("BowlingGame", {
     assertEquals(26, this.game.score());
   },
 
+  "test perfect game": function() {
+    this.rollMany(12, 10);
+    assertEquals(300, this.game.score());
+  },
+
   "rollMany": function(n, pins) {
     for(i=0;i<n;i++){
       this.game.roll(pins);
