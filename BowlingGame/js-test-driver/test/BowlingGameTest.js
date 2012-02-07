@@ -28,6 +28,15 @@ TestCase("BowlingGame", {
     assertEquals(20, this.game.score());
   },
 
+  "test one spare": function() {
+    this.game.roll(5);
+    this.game.roll(5); // spare
+    this.game.roll(5);
+    this.game.roll(3);
+    this.rollMany(16, 0);
+    assertEquals(23, this.game.score());
+  },
+
   "rollMany": function(n, pins) {
     for(i=0;i<n;i++){
       this.game.roll(pins);
