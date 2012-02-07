@@ -17,5 +17,5 @@ test("20roll all gutter", function() {
     bowling.roll(0);
   }
 
-  equal( bowling.score, 0 );
+  equal( bowling.score(), 0 );
 });

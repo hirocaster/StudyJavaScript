@@ -1,6 +1,12 @@
 var Bowling = function() {
-  this.score = 0;
+
+  var score = 0;
+
   this.roll = function(pins){
-    this.score += pins;
-  }
+    score += pins;
+  };
+
+  this.score = function(){
+    return score;
+  };
 };
