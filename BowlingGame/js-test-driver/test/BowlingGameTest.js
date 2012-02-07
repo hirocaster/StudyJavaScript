@@ -1,6 +1,6 @@
 TestCase("BowlingGame", {
   setUp: function() {
-    console.log("foobaraaa");
+    this.game = new BowlingGame();
   },
 
   tearDown: function() {
@@ -15,8 +15,14 @@ TestCase("BowlingGame", {
   },
 
   "test init game class": function() {
-    var game = new BowlingGame();
-    assertEquals("object", typeof(game));
+    assertEquals("object", typeof(this.game));
+  },
+
+  "test all gutter": function() {
+    for(i=0;i>20;i++){
+      this.game.roll(0);
+    }
+    assertEquals(0, this.game.score());
   }
 
 });
