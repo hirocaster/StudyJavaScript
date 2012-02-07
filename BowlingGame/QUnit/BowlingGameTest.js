@@ -28,3 +28,11 @@ test("20roll all one", function() {
   rollMany(20, 1);
   equal( game.score(), 20 );
 });
+
+test("one spare",function() {
+  game.roll(5);
+  game.roll(5); // spare
+  game.roll(3);
+  rollMany(17, 0);
+  equal( game.score(), 16 );
+});
