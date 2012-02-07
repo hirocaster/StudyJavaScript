@@ -5,23 +5,36 @@ var Bowling = function() {
 
   this.roll = function(pins){
     rolls[currentRoll] = pins;
+    if(pins == 10){
+        currentRoll++;
+        rolls[currentRoll] = 0;
+    }
     currentRoll++;
   };
 
   this.score = function(){
     var score = 0;
-    var spare = false;
     var index = 0;
     for( frame=0; frame < 10; frame++){
-      if(isSpare(frame)){
-        score += (rolls[index] + rolls[index+1]) * 2;
-      } else {
-        score += (rolls[index] + rolls[index+1]);
+      if(isStrike(frame)){
+        score += rolls[index] + rolls[index + 1];
+      } else if(isSpare(frame)){
+        score += rolls[index];
       }
+
+      score += rolls[index] + rolls[index + 1];
       index += 2;
     }
     return score;
   };
+
+  function isStrike(frame){
+    if(frame > 0){
+      return rolls[frame * 2 - 2] == 10 ? true : false;
+    } else {
+      return false;
+    }
+  }
 
   function isSpare(frame){
     if(frame > 0){
@@ -30,5 +43,6 @@ var Bowling = function() {
       return false;
     }
   }
+
 
 };

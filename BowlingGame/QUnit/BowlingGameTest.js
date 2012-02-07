@@ -36,3 +36,11 @@ test("one spare",function() {
   rollMany(17, 0);
   equal( game.score(), 16 );
 });
+
+test("one strike",function() {
+  game.roll(10); //strike
+  game.roll(4);
+  game.roll(3);
+  rollMany(16, 0);
+  equal( game.score(), 24 );
+});
