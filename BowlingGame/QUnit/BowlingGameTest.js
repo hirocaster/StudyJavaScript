@@ -1,9 +1,17 @@
-
-module("BowlingGame");
-
-test("pass test", function() {
-  ok( true, "first test");
+var game = null;
+module("BowlingGame",{
+  setup:function() {
+    game = new Bowling();
+  },
+  teardown:function() {
+  }
 });
+
+function rollMany(n, pins) {
+  for( i=0; i < n; i++) {
+    game.roll(pins);
+  }
+};
 
 test("new Bowling Class", function() {
   var bowling = new Bowling();
@@ -11,11 +19,12 @@ test("new Bowling Class", function() {
 });
 
 test("20roll all gutter", function() {
-  var bowling = new Bowling();
+  rollMany(20, 0);
+  equal( game.score(), 0 );
+});
 
-  for( i=0; i < 20; i++) {
-    bowling.roll(0);
-  }
 
-  equal( bowling.score(), 0 );
+test("20roll all one", function() {
+  rollMany(20, 1);
+  equal( game.score(), 20 );
 });
