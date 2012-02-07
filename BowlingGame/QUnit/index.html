@@ -6,9 +6,10 @@
   <link rel="stylesheet" href="http://code.jquery.com/qunit/git/qunit.css" type="text/css" media="screen" />
   <script type="text/javascript" src="http://code.jquery.com/qunit/git/qunit.js"></script>
   <script type="text/javascript" src="BowlingGame.js"></script>
+
   <script>
   $(document).ready(function(){
-    
+
 test("a basic test example", function() {
   ok( true, "this test is fine" );
   var value = "hello";
@@ -33,28 +34,17 @@ test("some other test", function() {
   equal( true, true, "passing test" );
 });
 
-module("BowlingGame");
-
-test("pass test", function() {
-  ok( true, "first test");
-});
-
-test("new Bowling Class", function() {
-  var bowling = new Bowling();
-  equal( typeof(bowling) == "object" ? true : false,
-         true );
-});
-
   });
   </script>
-  
+
 </head>
 <body>
-  <h1 id="qunit-header">QUnit example</h1>
+ <h1 id="qunit-header">QUnit example</h1>
  <h2 id="qunit-banner"></h2>
  <div id="qunit-testrunner-toolbar"></div>
  <h2 id="qunit-userAgent"></h2>
  <ol id="qunit-tests"></ol>
  <div id="qunit-fixture">test markup, will be hidden</div>
+ <script type="text/javascript" src="BowlingGameTest.js"></script>
 </body>
 </html>
