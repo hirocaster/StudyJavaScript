@@ -19,10 +19,17 @@ TestCase("BowlingGame", {
   },
 
   "test all gutter": function() {
-    for(i=0;i>20;i++){
+    for(i=0;i<20;i++){
       this.game.roll(0);
     }
     assertEquals(0, this.game.score());
+  },
+
+  "test all one pins": function() {
+    for(i=0;i<20;i++){
+      this.game.roll(1);
+    }
+    assertEquals(20, this.game.score());
   }
 
 });
