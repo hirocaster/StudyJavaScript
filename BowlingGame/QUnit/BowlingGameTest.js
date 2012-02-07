@@ -44,3 +44,14 @@ test("one strike",function() {
   rollMany(16, 0);
   equal( game.score(), 24 );
 });
+
+test("Perfect Game last one pin",function() {
+  rollMany(11, 10);
+  game.roll(9);
+  equal( game.score(), 299 );
+});
+
+test("Perfect Game",function() {
+  rollMany(12, 10);
+  equal( game.score(), 300 );
+});
