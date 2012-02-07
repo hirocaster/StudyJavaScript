@@ -13,21 +13,22 @@ var Bowling = function() {
     var spare = false;
     var index = 0;
     for( frame=0; frame < 10; frame++){
-
-      if(spare){
+      if(isSpare(frame)){
         score += (rolls[index] + rolls[index+1]) * 2;
       } else {
         score += (rolls[index] + rolls[index+1]);
       }
-
-      if( rolls[index] + rolls[index+1] == 10) {
-        spare = true;
-      } else {
-        spare = false;
-      }
-
       index += 2;
     }
     return score;
   };
+
+  function isSpare(frame){
+    if(frame > 0){
+      return rolls[frame * 2 - 2] + rolls[frame * 2 - 1] == 10 ? true : false;
+    } else {
+      return false;
+    }
+  }
+
 };
