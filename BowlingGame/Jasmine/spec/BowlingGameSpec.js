@@ -17,4 +17,11 @@ describe("BowlingGame", function(){
     expect(0).toEqual(game.score());
   });
 
+  it("all 1pins",function(){
+    for(i=0;i<20;i++){
+      game.roll(1);
+    }
+    expect(20).toEqual(game.score());
+  });
+
 });
