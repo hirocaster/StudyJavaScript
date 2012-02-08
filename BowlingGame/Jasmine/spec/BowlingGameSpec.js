@@ -1,9 +1,9 @@
 describe("BowlingGame", function() {
 
-  var foobar;
+  var game;
 
   beforeEach(function() {
-    foobar = "foobar";
+    game = new BowlingGame();
   });
 
   it("Hello Jasmine", function() {
