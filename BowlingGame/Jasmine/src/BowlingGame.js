@@ -10,4 +10,4 @@ var BowlingGame = function(){
     return score;
   };
 
-}
+};
