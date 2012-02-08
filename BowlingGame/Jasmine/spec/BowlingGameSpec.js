@@ -16,14 +16,22 @@ describe("BowlingGame", function(){
         expect("Jasmine").toEqual("Jasmine");
     });
 
-    it("all 0pins",function(){
+    it("all 0pins", function(){
         manyRoll(20, 0);
         expect(0).toEqual(game.score());
     });
 
-    it("all 1pins",function(){
+    it("all 1pins", function(){
         manyRoll(20, 1);
         expect(20).toEqual(game.score());
+    });
+
+    it("one spare", function(){
+        game.roll(3);
+        game.roll(7); // spare
+        game.roll(1);
+        manyRoll(17, 0);
+        expect(12).toEqual(game.score());
     });
 
 });
