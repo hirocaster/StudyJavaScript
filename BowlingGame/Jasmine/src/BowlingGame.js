@@ -12,27 +12,28 @@ var BowlingGame = function(){
         var score = 0;
         for (i=0; i<rolls.length;i++){
             score += rolls[i];
-            if(this.isSpare(i)){
+            if(this.isSpareScoreUp(i, score)){
                 score += rolls[i];
             }
-            if(this.isStrike(i)){
+            if(this.isStrikeScoreUp(i, score)){
                 score += rolls[i];
             }
         }
         return score;
     };
 
-    this.isSpare = function(roll){
-        if(rolls[i - 1] + rolls[i - 2] == 10){
-            return true;
+    this.isSpareScoreUp = function(roll, score){
+        if(rolls[i - 1] + rolls[i - 2] == 10 ||
+           rolls[i - 1] + rolls[i - 2] == 20){
+            return score < 270 ? true : false;
         } else {
             return false;
         }
     };
 
-    this.isStrike = function(roll){
+    this.isStrikeScoreUp = function(roll, score){
         if(rolls[i - 1] == 10 || rolls[i - 2] == 10){
-            return true;
+            return score < 290 ? true : false;
         } else {
             return false;
         }

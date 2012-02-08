@@ -42,4 +42,9 @@ describe("BowlingGame", function(){
         expect(18).toEqual(game.score());
     });
 
+    it("Perfect Game", function(){
+        manyRoll(12, 10);
+        expect(300).toEqual(game.score());
+    });
+
 });
