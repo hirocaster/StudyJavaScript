@@ -34,4 +34,12 @@ describe("BowlingGame", function(){
         expect(12).toEqual(game.score());
     });
 
+    it("one strike", function(){
+        game.roll(10); // strike
+        game.roll(1);
+        game.roll(3);
+        manyRoll(16, 0);
+        expect(18).toEqual(game.score());
+    });
+
 });
